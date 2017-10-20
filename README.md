@@ -19,6 +19,7 @@ You may view images of the alternate designs in the README.md files at the top l
 - Download the [Hack typeface source](https://github.com/source-foundry/Hack/archive/master.zip).
 - Download the `*.glif` source files from the alt-hack repository that you would like to use as replacements in the Hack source.
 - Overwrite the existing Hack `*.glif` files for your selected Unicode code points with the alt-hack `*.glif` files (replacements in alt-hack have the same file paths as those in default source).
+- Modify existing manual hinting adjustments for any files that you replace (see [detailed instructions](#eliminate-existing-manual-instruction-sets-for-alternate-glyphs-if-present) below)
 - Build new Hack fonts using the simple make based build approach in the [build documentation](https://github.com/source-foundry/Hack/blob/master/docs/BUILD.md).
 
 ### Detailed Instructions
