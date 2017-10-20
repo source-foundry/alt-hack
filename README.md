@@ -16,10 +16,10 @@ You may view images of the alternate designs in the README.md files at the top l
 
 ### Quickstart Instructions
 
-- Download the [Hack typeface source](https://github.com/source-foundry/Hack/archive/master.zip)
-- Download the `*.glif` source files from the alt-hack repository that you would like to use as replacements in the Hack source
-- Overwrite the existing Hack `*.glif` files for your selected Unicode code points with the alt-hack `*.glif` files (replacements in alt-hack have the same file paths as those in default source)
-- Build new Hack fonts using the simple make based build approach in the [build documentation](#)
+- Download the [Hack typeface source](https://github.com/source-foundry/Hack/archive/master.zip).
+- Download the `*.glif` source files from the alt-hack repository that you would like to use as replacements in the Hack source.
+- Overwrite the existing Hack `*.glif` files for your selected Unicode code points with the alt-hack `*.glif` files (replacements in alt-hack have the same file paths as those in default source).
+- Build new Hack fonts using the simple make based build approach in the [build documentation](#).
 
 ### Detailed Instructions
 
@@ -44,14 +44,14 @@ Copy the alternate glyph source files for the appropriate font variants (i.e. re
 
 #### Build new fonts
 
-Use the build instructions in the Hack repository to compile new desktop ttf font files and/or web fonts with your custom version of Hack.
+Use the build instructions in the Hack repository to compile new desktop `*.ttf` font files and/or web fonts with your custom version of Hack.
 
 ### Post-Modification Licensing
 These changes to the Hack typeface fall within acceptable modification practice under the Hack license.
 
 - It is not necessary to change the font name as a result of these modifications.
 - It is acceptable practice to change the name of the fonts if you would like (e.g. for release to others under a different font name).
-- Please maintain the Hack license with modified versions of the upstream source
+- Please maintain the Hack license with modified versions of the upstream source.
  See the Hack license for further details.
 
 ## License
