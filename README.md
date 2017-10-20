@@ -43,9 +43,9 @@ Download the `*.glif` files in the regular, bold, italic, and bolditalic directo
 Copy the alternate glyph source files for the appropriate font variants (i.e. regular, bold, italic, bold italic) from this repository into the corresponding `glyphs` directory of the Hack UFO source for the respective variant.  This should overwrite an existing file in that directory.  Please note that the alternate files for each variant have the same file path. Please confirm that you are overwriting an existing file with a new file that is of the appropriate variant type.
 
 #### Eliminate existing manual instruction sets for alternate glyphs (if present)
-Some of the glyphs in the Hack sets include manual changes to the ttfautohint automated instruction sets ("hints").  These must be eliminated if you replace an existing glyph in the main Hack sets with a stylistic alternate from this repository or your build will fail (or create undesirable rendering changes that are not tuned for the alternate glyph.
+Some of the glyphs in the Hack sets include manual changes to the ttfautohint automated instruction sets ("hints").  These must be eliminated if you replace an existing glyph in the main Hack sets with a stylistic alternate from this repository or your build will fail (or create undesirable rendering changes that are not tuned for the alternate glyph).
 
-The control instructions files that are used to manually modify the hints in the Hack builds are located in the [tt-hinting directory](https://github.com/source-foundry/Hack/tree/master/postbuild_processing/tt-hinting) of the Hack repository. There is one text file per Hack variant (i.e. for Regular, Italic, Bold, and BoldItalic sets).  The manual hints are organized by Unicode code point.
+The control instructions files that are used to manually modify the hints in the Hack builds are located in the [tt-hinting directory](https://github.com/source-foundry/Hack/tree/master/postbuild_processing/tt-hinting) of the Hack repository. There is one text file per Hack variant (i.e. for Regular, Italic, Bold, and Bold Italic sets).  The manual hints are organized by Unicode code point.
 
 Examine these control instructions files before you build your new fonts.  If you identify a block of instructions under a heading for a Unicode code point that you intend to replace, either delete all lines associated with that glyph or comment out the block with `#` symbols at the beginning of each line.
 
@@ -68,7 +68,7 @@ to the following:
 # uni0030 touch 35,36,56 y -1.0 @12,13,14
 ```
 
-or simply delete the heading line `# U+0030 zero glyph ID 548` and the individual instruction lines below that level for the U+0030 glyph.  Repeat this for any values that are included for your glyph changes in each of the four control instructions files BEFORE you attempt to build your new files.
+or simply delete the heading line `# U+0030 zero glyph ID 548` and the individual instruction lines below that level for the U+0030 glyph.  Repeat this for any values that are included for your glyph changes in each of the four control instructions files before you attempt to build your new files.
 
 #### Build new fonts
 
