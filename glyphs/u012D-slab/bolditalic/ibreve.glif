@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<glyph name="ibreve" format="1">
+  <advance width="1233"/>
+  <unicode hex="012D"/>
+  <outline>
+    <contour>
+      <point x="309" y="1120" type="line"/>
+      <point x="889" y="1120" type="line"/>
+      <point x="715" y="225" type="line"/>
+      <point x="1079" y="225" type="line"/>
+      <point x="1036" y="0" type="line"/>
+      <point x="14" y="0" type="line"/>
+      <point x="57" y="225" type="line"/>
+      <point x="422" y="225" type="line"/>
+      <point x="553" y="895" type="line"/>
+      <point x="266" y="895" type="line"/>
+    </contour>
+    <contour>
+      <point x="719" y="1297" type="curve" smooth="yes" name="dv01"/>
+      <point x="528" y="1297"/>
+      <point x="429" y="1382"/>
+      <point x="429" y="1561" type="curve" smooth="yes"/>
+      <point x="429" y="1594" type="line" name="dh02"/>
+      <point x="573" y="1594" type="line" name="sv01"/>
+      <point x="573" y="1581" type="line" smooth="yes" name="dh03"/>
+      <point x="573" y="1500"/>
+      <point x="635" y="1448"/>
+      <point x="739" y="1448" type="curve" smooth="yes" name="dv02"/>
+      <point x="844" y="1448"/>
+      <point x="927" y="1502"/>
+      <point x="960" y="1594" type="curve" name="sv02"/>
+      <point x="1103" y="1594" type="line" name="hr01"/>
+      <point x="1064" y="1409"/>
+      <point x="935" y="1297"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2017-09-30 11:35:33 +0000</string>
+    </dict>
+  </lib>
+</glyph>
