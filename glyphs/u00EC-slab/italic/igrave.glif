@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<glyph name="igrave" format="1">
+  <advance width="1233"/>
+  <unicode hex="00EC"/>
+  <outline>
+    <contour>
+      <point x="358" y="1120" type="line"/>
+      <point x="829" y="1120" type="line"/>
+      <point x="639" y="143" type="line"/>
+      <point x="1004" y="143" type="line"/>
+      <point x="975" y="0" type="line"/>
+      <point x="61" y="0" type="line"/>
+      <point x="90" y="143" type="line"/>
+      <point x="455" y="143" type="line"/>
+      <point x="616" y="977" type="line"/>
+      <point x="330" y="977" type="line"/>
+    </contour>
+    <contour>
+      <point x="383" y="1646" type="line" name="hr00"/>
+      <point x="581" y="1646" type="line"/>
+      <point x="778" y="1270" type="line" name="iv01"/>
+      <point x="635" y="1270" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2017-07-11 17:15:08 +0000</string>
+    </dict>
+  </lib>
+</glyph>
