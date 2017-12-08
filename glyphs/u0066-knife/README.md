@@ -3,7 +3,7 @@ Regular:
 
 
 Italic:
-<img src="hhttps://user-images.githubusercontent.com/3703530/33773453-35b8aea6-dc38-11e7-88dc-8b3cbd2f5250.png" height="60">
+<img src="https://user-images.githubusercontent.com/3703530/33773453-35b8aea6-dc38-11e7-88dc-8b3cbd2f5250.png" height="60">
 
 
 Bold:
