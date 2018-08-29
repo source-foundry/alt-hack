@@ -18,7 +18,7 @@ You may view images of the alternate designs in the README.md files at the top l
 
 - Download the [Hack typeface source](https://github.com/source-foundry/Hack/archive/master.zip).
 - Download the `*.glif` source files from the alt-hack repository that you would like to use as replacements in the Hack source.
-- Overwrite the existing Hack `*.glif` files for your selected Unicode code points with the alt-hack `*.glif` files (replacements in alt-hack have the same file paths as those in default source).
+- Overwrite the existing Hack `*.glif` files for your selected Unicode code points with the alt-hack `*.glif` files (replacements in alt-hack have the same file paths as those in default source). You can use the included `patch-hack.sh` script to automate this operation – see instructions within the script itself.
 - Modify existing manual hinting adjustments for any files that you replace (see [detailed instructions](#eliminate-existing-manual-instruction-sets-for-alternate-glyphs-if-present) below)
 - Build new Hack fonts using the simple make based build approach in the [build documentation](https://github.com/source-foundry/Hack/blob/master/docs/BUILD.md).
 
@@ -41,7 +41,9 @@ The glyph design source files live in the `glyphs` subdirectory within each of t
 Download the `*.glif` files in the regular, bold, italic, and bolditalic directories from the alt-hack repository for each replacement that you want to make in the Hack source.  The alternate style source files have the same file path as we use in the Hack source.  The `*.glif` design source files are intended to be used as direct replacements for the existing default source files.
 
 #### Overwrite existing source files
-Copy the alternate glyph source files for the appropriate font variants (i.e. regular, bold, italic, bold italic) from this repository into the corresponding `glyphs` directory of the Hack UFO source for the respective variant.  This should overwrite an existing file in that directory.  Please note that the alternate files for each variant have the same file path. Please confirm that you are overwriting an existing file with a new file that is of the appropriate variant type.
+You can use the included `patch-hack.sh` script to copy over your desired glyph modifications over into the Hack source repository. See instructions in the script itself.
+
+Alternatively, you can do the copying manually. Copy the alternate glyph source files for the appropriate font variants (i.e. regular, bold, italic, bold italic) from this repository into the corresponding `glyphs` directory of the Hack UFO source for the respective variant.  This should overwrite an existing file in that directory.  Please note that the alternate files for each variant have the same file path. Please confirm that you are overwriting an existing file with a new file that is of the appropriate variant type.
 
 #### Eliminate existing manual instruction sets for alternate glyphs (if present)
 Some of the glyphs in the Hack sets include manual changes to the ttfautohint automated instruction sets ("hints").  These must be eliminated if you replace an existing glyph in the main Hack sets with a stylistic alternate from this repository or your build will fail (or create undesirable rendering changes that are not tuned for the alternate glyph).
