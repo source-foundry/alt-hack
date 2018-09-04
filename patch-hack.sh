@@ -35,11 +35,10 @@ do
     for style in "${styles[@]}"
     do
         stylePath="${HACK_PATH}/source/Hack-${style}.ufo/glyphs"
-        lowercaseStyle=`echo "$style" | tr '[:upper:]' '[:lower:]'`
-        alternatePath="./glyphs/${alternate}/${lowercaseStyle}/*.glif"
+        lowercaseStyle=$(echo "$style" | tr '[:upper:]' '[:lower:]')
+        alternatePath="./glyphs/${alternate}/${lowercaseStyle}"
 
-        cp $alternatePath $stylePath
-        if [ $? -ne 0 ]; then
+        if ! cp "$alternatePath"/*.glif "$stylePath"; then
             echo "❌ Aborting patching of Hack, check errors above."
             exit 1
         fi
