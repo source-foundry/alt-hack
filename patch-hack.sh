@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# --------------------------------------------------
+# Copyright 2018 Source Foundry Authors
+# MIT License
+# Source: https://github.com/source-foundry/alt-hack
+# ---------------------------------------------------
+
 # 1. Set the path to the downloaded Hack repo here first
 HACK_PATH=""
 
