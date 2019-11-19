@@ -1,0 +1,236 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+;;; This file (c) Spenser Truex 2019
+;;; MIT license.
+
+(progn ;;init forms
+  (ros:ensure-asdf)
+  #+quicklisp(ql:quickload '(:alexandria :str :uiop :let-over-lambda)
+                           :silent t))
+
+;;; EXAMPLE USAGE:
+;;; cd alt-hack && ./generator.ros curve dot slabi
+(defpackage :ros.script.generator.3783095582
+  (:use :cl)
+  (:import-from
+   :alexandria
+   :flatten
+   :compose)
+  (:import-from :str :concat)
+  (:import-from
+   :uiop
+   :copy-file
+   :resolve-symlinks
+   :directory-files
+   :subdirectories
+   :run-program))
+(in-package :ros.script.generator.3783095582)
+(defvar *weights* '("Bold" "BoldItalic" "Italic" "Regular"))
+
+(defun uncomment (spec)
+  (remove-if #'(lambda (item)
+                 (and (stringp item)
+                      (= 1 (length item))))
+             spec))
+
+(defparameter *helpful-groups*
+  '((curve "u0028-curved" "("
+     "u0029-curved" ")")
+    (round "u0028-rounder" "("
+     "u0029-rounder" ")")
+    (backslash "u0030-backslash" "0")
+    (diamond "u0030-diamond" "0")
+    (dot "u0030-dotted" "0")
+    (forwardslash "u0030-forwardslash" "0")
+    (noslab1 "u0031-noslab" "1")
+    (flattop3 "u0033-flattop" "3")
+    (wider "u003C-wider" "<"
+     "u003E-wider" ">")
+    (knife "u0066-knife" "f")
+    (slabi "u0069-slab" "i"
+     "u00EC-slab" "ì"
+     "u00ED-slab" "í"
+     "u00EE-slab" "î"
+     "u00EF-slab" "ï"
+     "u0129-slab" "ĩ"
+     "u012B-slab" "ī"
+     "u012D-slab" "ĭ"
+     "u012F-slab" "į"
+     "u0131-slab" "ı"
+     "u0456-slab" "і"
+     "u0457-slab" "ї"))
+  "Groups with extra information for user help.")
+
+(defun prune (test tree)
+  (labels ((rec (tree acc)
+             (cond
+               ((null tree) (nreverse acc))
+               ((consp (car tree))
+                (rec (cdr tree)
+                     (cons (rec (car tree) nil) acc)))
+               (t (rec (cdr tree)
+                       (if (funcall test (car tree))
+                           acc
+                           (cons (car tree) acc)))))))
+    (rec tree nil)))
+
+(defun pprint-helpful-groups ()
+  (let ((more-helpful (prune #'(lambda (s)
+                                 (and (stringp s)
+                                      (< 1 (length s))))
+                             *helpful-groups*)))
+    (loop for g in more-helpful
+          do (format t "~A:~%" (car g))
+          do (format t "~{~A ~}~%" (cdr g)))))
+(defparameter *groups*
+  (mapcar #'uncomment *helpful-groups*)
+  "Things you actually want to permute together.")
+(defparameter *exclusions*
+  '((curve round)
+    (backslash diamond dot forwardslash))
+  "Things which you don't want specified at the same time.")
+(defparameter *formats*
+  '("ttf" "woff" "woff2")
+  "Valid parameters to call as formats.")
+
+(define-symbol-macro help
+    (progn (pprint-lines
+            "generator.ros OPTIONS* {SHOW | SPEC+}")
+           (format t "These are valid OPTIONS: ~{~A ~}~%"
+                   (mapcar #'(lambda (f) (concat "--" f))
+                           *formats*))
+           (pprint-lines "SPEC should be a list of:")
+           (pprint-helpful-groups)
+           (pprint-lines
+            "Keep in mind that it makes no sense to include"
+            "the same character spec twice."
+            "SHOW just finds all available glyphs in alt-hack."
+            "TEST runs the test functions for ttf, woff and woff2.")))
+
+(defun find-keyword (keyword group)
+  (when (not (null group))
+    (let ((c (car group)))
+      (if (eql keyword (car c))
+          c
+          (find-keyword keyword (cdr group))))))
+
+(defun folders (keyword)
+  (cdr (find-keyword keyword *groups*)))
+
+(defun pprint-lines (&rest strings)
+  (format t "~{~A~%~}" strings))
+
+(defun remove-hints ()
+  (let ((files (directory-files #P"Hack/postbuild_processing/tt-hinting")))
+    (dolist (f files)
+      (with-open-file (si f :direction :input)
+        (with-open-file (so f :direction :output
+                              :if-exists :supersede)
+          (let ((line (read-line si nil nil)))
+            (when (and line (char/= #\#(elt line 0)))
+              (write-line (format nil "# ~S~%" line) so))))))))
+
+(defun put-glyphs! (ufolders)
+  (dolist (arg ufolders)
+    (dolist (weight *weights*)
+      (dolist (f (uiop:directory-files
+                  (concat "glyphs/" arg "/"
+                          (string-downcase weight) "/")))
+        (copy-file f
+                   (concat "Hack/source/Hack-" weight
+                           ".ufo/glyphs/"
+                           (concat (pathname-name f) "."
+                                   (pathname-type f))))))))
+(defun make-it (&optional subcommand)
+  ;; Cannot use uiop:launch-program since it is asynchronous.
+  (run-program (if subcommand
+                      (list "make" subcommand)
+                      "make")
+                  :output *standard-output*
+                  :directory #P"Hack"
+                  :error-output *standard-output*))
+(defun build (&rest make-commands)
+  (dolist (m make-commands)
+    (make-it m)))
+
+(defun verify (spec)
+  "Ensure that the spec is not bogus."
+  (let ((group (not (set-difference spec (mapcar #'car *groups*))))
+        (exclusion (not (some #'identity
+                    (mapcar #'(lambda (ex)
+                                (<= 2 (length (intersection spec ex))))
+                            *exclusions*)))))
+    (values (and group exclusion)
+            (if group (if exclusion 'group-and-exclusion 'group)
+                (if exclusion 'exclusion 'unknown)))))
+
+(defun show-characters ()
+  (flet ((pprint-letters (letter-alist)
+           (dolist (p letter-alist)
+             (format t "~T~A~T~A~%"
+                     (string (cdr p)) (car p)))))
+    (let ((dirs (subdirectories "glyphs")))
+      (pprint-letters
+       (loop
+         for d in dirs
+         collecting
+         (let ((mat (car (last (pathname-directory d)))))
+           (cons
+            mat
+            (code-char (read-from-string
+                        (concat "#x"
+                                (subseq mat 1 (search "-" mat))))))))))))
+(defun format-parser (argv)
+  (when argv
+    (let ((c (car argv)))
+      (when (and (< 2 (length c))
+                 (string= "--" (subseq c 0 2)))
+       (cons (subseq c 2) (format-parser (cdr argv)))))))
+(defun should-help (argv)
+  (or (null argv)
+      (dolist (a argv)
+        (when (or (search "-?" a)
+                  (search "-h" a)
+                  (search "help" a))
+          (return t)))))
+(defun should-test (argv)
+  (string= (car argv) "test"))
+
+(define-symbol-macro test
+    (progn (format t "Helping you:~%")
+           (main "help")
+           (format t "~%DONE. Trying TTF.")
+           (main "--ttf")
+           (format t "~%DONE. Trying WOFF.")
+           (main "--woff")
+           (format t "~%DONE. Trying WOFF2.")
+           (main "--woff2")))
+
+(defun main (&rest argv)
+  (declare (ignorable argv))
+  (if (should-help argv)
+      help
+      (if (should-test argv)
+          test
+          (let ((formats (format-parser argv)))
+            (let ((argv (mapcar (compose #'intern #'string-upcase)
+                                (nthcdr (length formats) argv)))
+                  (formats (or formats "ttf woff woff2")))
+              (if (and argv (string= "SHOW" (string-upcase (car argv))))
+                  (show-characters)
+                  (multiple-value-bind (bool name)
+                      (verify argv)
+                    (if bool
+                        (progn (remove-hints)
+                               (mapc #'put-glyphs!
+                                     (mapcar #'folders argv))
+                               ;; Can't get woff2 on my system.
+                               (mapc #'build formats))
+                        (progn (format t "Invalid ~S in spec: ~{~A ~}~%"
+                                       name
+                                       argv))))))))))
+
+;;; vim: set ft=lisp lisp:

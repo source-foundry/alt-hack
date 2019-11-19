@@ -1,0 +1,3 @@
+[submodule "Hack"]
+	path = Hack
+	url = git://github.com/source-foundry/Hack.git
