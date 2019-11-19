@@ -39,6 +39,35 @@ Detailed instructions of the above quickstart steps follow.
 
 The glyph design source files live in the `glyphs` subdirectory within each of these top level `*.ufo` source directories.
 
+#### Pick your new glyphs
+Here they are in all their glory:
+- ( u0028-curved
+- ( u0028-rounder
+- ) u0029-curved
+- ) u0029-rounder
+- 0 u0030-backslash
+- 0 u0030-diamond
+- 0 u0030-dotted
+- 0 u0030-forwardslash
+- 1 u0031-noslab
+- 3 u0033-flattop
+- < u003C-wider
+- > u003E-wider
+- [ u005B-oldv3
+- ] u005D-oldv3
+- f u0066-knife
+- i u0069-slab
+- ì u00EC-slab
+- í u00ED-slab
+- î u00EE-slab
+- ï u00EF-slab
+- ĩ u0129-slab
+- ī u012B-slab
+- ĭ u012D-slab
+- į u012F-slab
+- ı u0131-slab
+- і u0456-slab
+- ї u0457-slab
 #### Obtain replacement source files
 Download the `*.glif` files in the regular, bold, italic, and bolditalic directories from the alt-hack repository for each replacement that you want to make in the Hack source.  The alternate style source files have the same file path as we use in the Hack source.  The `*.glif` design source files are intended to be used as direct replacements for the existing default source files.
 
