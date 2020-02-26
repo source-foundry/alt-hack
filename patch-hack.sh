@@ -11,18 +11,18 @@ HACK_PATH=""
 
 # 2. List your alternate glyphs here
 declare -a alternates=(
-    "u00EC-slab"
-    "u00ED-slab"
-    "u00EF-slab"
-    "u012B-slab"
-    "u012D-slab"
-    "u012F-slab"
-    "u0030-diamond"
-    "u0069-slab"
-    "u0129-slab"
-    "u0131-slab"
-    "u0456-slab"
-    "u0457-slab"
+    "zero-dotted"
+#    "zero-forwardslash"
+#    "zero-backslash"
+#    "zero-diamond"
+    "one-noslab"
+#    "three-flattop"
+#    "f-knife"
+    "i-slab"
+#    "parentheses-curved"
+    "parentheses-rounder"
+#    "angle-brackets-wider"
+#    "square-brackets-oldv3"
 )
 
 # 3. Run this script and enjoy!
