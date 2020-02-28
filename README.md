@@ -9,10 +9,9 @@ This repository is open to contributions of new glyph designs intended to be use
 ## Usage
 
 ### View Alternate Glyph Styles
-The `*.glif` source files are located in the `glyphs` directory of this repository and are organized by Unicode code point. A short string is added to the Unicode code point to describe the type of design modification that was performed to the Hack default style.  Source files are supplied for regular, bold, italic, and bold italic font variants.
+The `*.glif` source files are located in the `glyphs` directory of this repository.  Each one is named to show the character modified along with a short string to describe the type of design modification that was performed to the Hack default style.  Source files are supplied for regular, bold, italic, and bold italic font variants.
 
-You may view images of the alternate designs in the README.md files at the top level of each alternate glyph directory.
-
+You may view images of the alternate designs in the README.md files at the top level of each alternate glyph directory or see an overview of all the modifications in README.md in the `glyphs` directory itself.
 
 ### How to Build a Custom Version of Hack
 
@@ -49,6 +48,8 @@ Alternatively, you can do the copying manually. Copy the alternate glyph source 
 
 #### Eliminate existing manual instruction sets for alternate glyphs (if present)
 Some of the glyphs in the Hack sets include manual changes to the ttfautohint automated instruction sets ("hints").  These must be eliminated if you replace an existing glyph in the main Hack sets with a stylistic alternate from this repository or your build will fail (or create undesirable rendering changes that are not tuned for the alternate glyph).
+
+This process is automated within the `patch-hack.sh` script but if you want to manually disable hints, keep reading.
 
 The control instructions files that are used to manually modify the hints in the Hack builds are located in the [tt-hinting directory](https://github.com/source-foundry/Hack/tree/master/postbuild_processing/tt-hinting) of the Hack repository. There is one text file per Hack variant (i.e. for Regular, Italic, Bold, and Bold Italic sets).  The manual hints are organized by Unicode code point.
 
