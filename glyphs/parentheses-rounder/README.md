@@ -1,15 +1,16 @@
-<img src="https://user-images.githubusercontent.com/17225098/37941759-cdbe3f4a-313d-11e8-9dd1-467137ae6946.png" height=60>
+![parenleft-rounder-Regular](https://user-images.githubusercontent.com/23739434/75572376-aa590400-5a52-11ea-8fc9-51d99b0f14e3.png)
 
-<img src="https://user-images.githubusercontent.com/17225098/37941776-dfc42952-313d-11e8-87b4-350eb727df15.png" height=60>
+![parenleft-rounder-Italic](https://user-images.githubusercontent.com/23739434/75572374-a9c06d80-5a52-11ea-9bd0-2287b3a0a970.png)
 
-<img src="https://user-images.githubusercontent.com/17225098/37941790-f125b8dc-313d-11e8-88ff-402c22e56634.png" height=60>
+![parenleft-rounder-Bold](https://user-images.githubusercontent.com/23739434/75572372-a927d700-5a52-11ea-8bef-e3a6e7f74a6e.png)
 
-<img src="https://user-images.githubusercontent.com/17225098/37941796-fe013040-313d-11e8-9ada-2b5df1e97e22.png" height=60>
+![parenleft-rounder-BoldItalic](https://user-images.githubusercontent.com/23739434/75572373-a927d700-5a52-11ea-8cfa-8128a7370e08.png)
 
-<img src="https://user-images.githubusercontent.com/17225098/37941846-4b1eb30c-313e-11e8-8e3e-7a731ae90296.png" height=60>
+![parenright-rounder-Regular](https://user-images.githubusercontent.com/23739434/75572389-ac22c780-5a52-11ea-85da-ed62ccce1699.png)
 
-<img src="https://user-images.githubusercontent.com/17225098/37941857-5cd06960-313e-11e8-9baa-27a7b136e894.png" height=60>
+![parenright-rounder-Italic](https://user-images.githubusercontent.com/23739434/75572388-ac22c780-5a52-11ea-90fb-ec10582dbee6.png)
 
-<img src="https://user-images.githubusercontent.com/17225098/37941882-775f2cee-313e-11e8-89f7-d5b297c4fc5c.png" height=60>
+![parenright-rounder-Bold](https://user-images.githubusercontent.com/23739434/75572385-ab8a3100-5a52-11ea-8f77-3ecfc17e71af.png)
 
-<img src="https://user-images.githubusercontent.com/17225098/37941907-8e265f92-313e-11e8-882c-7c269adfbd53.png" height=60>
+![parenright-rounder-BoldItalic](https://user-images.githubusercontent.com/23739434/75572386-ab8a3100-5a52-11ea-948c-6b5a34ecbd6c.png)
+

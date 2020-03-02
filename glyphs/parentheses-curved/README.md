@@ -1,15 +1,16 @@
-<img height=60 src="https://user-images.githubusercontent.com/206409/44809284-95d24c00-abce-11e8-9c86-14e5bc0766da.png">
+![parenleft-curved-Regular](https://user-images.githubusercontent.com/23739434/75572371-a88f4080-5a52-11ea-9c87-bca5a499747e.png)
 
-<img height=60 src="https://user-images.githubusercontent.com/206409/44809355-c0240980-abce-11e8-8856-2bd36a3bc50a.png">
+![parenleft-curved-Italic](https://user-images.githubusercontent.com/23739434/75572370-a88f4080-5a52-11ea-89e8-94004b7f269c.png)
 
-<img height=60 src="https://user-images.githubusercontent.com/206409/44809363-c5815400-abce-11e8-93f8-4c61a2a0d794.png">
+![parenleft-curved-Bold](https://user-images.githubusercontent.com/23739434/75572367-a7f6aa00-5a52-11ea-9cdd-aee46e898235.png)
 
-<img height=60 src="https://user-images.githubusercontent.com/206409/44809372-cca86200-abce-11e8-9d38-d51c5208f1da.png">
+![parenleft-curved-BoldItalic](https://user-images.githubusercontent.com/23739434/75572369-a7f6aa00-5a52-11ea-8452-f4858a9978d6.png)
 
-<img height=60 src="https://user-images.githubusercontent.com/206409/44809468-1133fd80-abcf-11e8-89eb-2538c1f04ae7.png">
+![parenright-curved-Regular](https://user-images.githubusercontent.com/23739434/75572384-ab8a3100-5a52-11ea-8d0f-41cd7856e3e6.png)
 
-<img height=60 src="https://user-images.githubusercontent.com/206409/44809478-185b0b80-abcf-11e8-9766-55235343286e.png">
+![parenright-curved-Italic](https://user-images.githubusercontent.com/23739434/75572382-aaf19a80-5a52-11ea-9c8d-b70f3701f52c.png)
 
-<img height=60 src="https://user-images.githubusercontent.com/206409/44809487-1ee98300-abcf-11e8-9590-6588031464f7.png">
+![parenright-curved-Bold](https://user-images.githubusercontent.com/23739434/75572379-aa590400-5a52-11ea-887c-badbc13c3e4d.png)
 
-<img height=60 src="https://user-images.githubusercontent.com/206409/44809502-2872eb00-abcf-11e8-8a85-8d5eebf4f23e.png">
+![parenright-curved-BoldItalic](https://user-images.githubusercontent.com/23739434/75572380-aaf19a80-5a52-11ea-9ba9-2b3bb11ad8a9.png)
+
