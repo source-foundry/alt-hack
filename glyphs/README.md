@@ -1,7 +1,7 @@
 
 | Glyph  | Original | alt-hack |
 | ------------- | :--: | :--: |
-| ampersand-nogap | ![ampersand](https://user-images.githubusercontent.com/23739434/75572160-872e5480-5a52-11ea-9a4b-f9c6a5b78dbb.png) | ![ampersand-nogap-Regular](https://user-images.githubusercontent.com/23739434/75572164-87c6eb00-5a52-11ea-8c6d-bf48290914fb.png) |
+| ampersand-nogap | ![ampersand](https://user-images.githubusercontent.com/23739434/75572160-872e5480-5a52-11ea-9a4b-f9c6a5b78dbb.png) | ![ampersand-nogap-Regular](https://user-images.githubusercontent.com/23739434/75802555-ca4f3700-5d74-11ea-9838-a31e512f1b71.png) |
 | angle-brackets-wider | ![less](https://user-images.githubusercontent.com/23739434/75572334-a331f600-5a52-11ea-851d-9309830105f1.png)![greater](https://user-images.githubusercontent.com/23739434/75572228-931a1680-5a52-11ea-9318-5cfe3d9d471e.png) | ![less-wider-Regular](https://user-images.githubusercontent.com/23739434/75572342-a3ca8c80-5a52-11ea-81ad-25f40db37800.png)![greater-wider-Regular](https://user-images.githubusercontent.com/23739434/75572235-93b2ad00-5a52-11ea-8fb2-5d4c2dcf7fd1.png) |
 | f-knife | ![f](https://user-images.githubusercontent.com/23739434/75572186-8bf30880-5a52-11ea-9b95-8dd9e2ba4658.png) | ![f-knife-Regular](https://user-images.githubusercontent.com/23739434/75572191-8d243580-5a52-11ea-978c-2170aaa5c65c.png) |
 | g-loop | ![g](https://user-images.githubusercontent.com/23739434/75572193-8d243580-5a52-11ea-8e19-fb31c6b45741.png) | ![g-loop-Regular](https://user-images.githubusercontent.com/23739434/75572226-92818000-5a52-11ea-89db-a867763ae66f.png) |

@@ -1,8 +1,8 @@
-![ampersand-nogap-Regular](https://user-images.githubusercontent.com/23739434/75572164-87c6eb00-5a52-11ea-8c6d-bf48290914fb.png)
+![ampersand-nogap-Regular](https://user-images.githubusercontent.com/23739434/75802555-ca4f3700-5d74-11ea-9838-a31e512f1b71.png)
 
-![ampersand-nogap-Italic](https://user-images.githubusercontent.com/23739434/75572163-87c6eb00-5a52-11ea-8c91-0bbf1734a789.png)
+![ampersand-nogap-Italic](https://user-images.githubusercontent.com/23739434/75802553-ca4f3700-5d74-11ea-9e52-271e4b9cc6ce.png)
 
-![ampersand-nogap-Bold](https://user-images.githubusercontent.com/23739434/75572161-872e5480-5a52-11ea-891d-fe9471fef9b0.png)
+![ampersand-nogap-Bold](https://user-images.githubusercontent.com/23739434/75802548-c9b6a080-5d74-11ea-8a18-2389f0dce149.png)
 
-![ampersand-nogap-BoldItalic](https://user-images.githubusercontent.com/23739434/75572162-87c6eb00-5a52-11ea-83f5-a87eb82cecf7.png)
+![ampersand-nogap-BoldItalic](https://user-images.githubusercontent.com/23739434/75802551-ca4f3700-5d74-11ea-87a4-f1b2cddd2355.png)
 
