@@ -6,31 +6,41 @@
 # Source: https://github.com/source-foundry/alt-hack
 # ---------------------------------------------------
 
-# 1. Set the path to the downloaded Hack repo here first
-HACK_PATH=""
+# 1. Set the path to the downloaded Hack repo, or set HACK_PATH environment variable
+HACK_PATH="${HACK_PATH:=""}"
 
-# 2. List your alternate glyphs here
+# 2. List your alternate glyphs here, or specify them on the command line
 declare -a alternates=(
-    "u00EC-slab"
-    "u00ED-slab"
-    "u00EF-slab"
-    "u012B-slab"
-    "u012D-slab"
-    "u012F-slab"
-    "u0030-diamond"
-    "u0069-slab"
-    "u0129-slab"
-    "u0131-slab"
-    "u0456-slab"
-    "u0457-slab"
+    "ampersand-nogap"
+#    "angle-brackets-wider"
+#    "f-knife"
+    "g-loop"
+    "i-slab"
+    "l-slab"
+    "one-noslab"
+#    "parentheses-curved"
+    "parentheses-rounder"
+    "percent-traditional"
+#    "square-brackets-oldv3"
+#    "three-flattop"
+#    "zero-dotted"
+    "zero-forwardslash"
+#    "zero-backslash"
+#    "zero-diamond"
 )
 
 # 3. Run this script and enjoy!
 
 # ------------------------------------------------------------------------------------------------ #
 
-if [ -z $HACK_PATH ]; then
-    echo "❌ Set the HACK_PATH variable in this script to your downloaded Hack repo root."
+# If arguments provided, use them as alternates instead
+if [ $# -gt 0 ]; then
+    alternates=("$@")
+fi
+
+if [ -z "$HACK_PATH" ]; then
+    echo "❌ Set the HACK_PATH variable in this script or via an environment variable to your"\
+         "downloaded Hack repo root."
     exit 1
 fi
 
@@ -44,13 +54,21 @@ do
         lowercaseStyle=$(echo "$style" | tr '[:upper:]' '[:lower:]')
         alternatePath="./glyphs/${alternate}/${lowercaseStyle}"
 
-        if ! cp "$alternatePath"/*.glif "$stylePath"; then
+        if ! cp "${alternatePath}"/*.glif "${stylePath}"; then
             echo "❌ Aborting patching of Hack, check errors above."
             exit 1
         fi
+
+        # Extract the unicode hex values from each glif
+        while read -r hexcode
+        do
+          # Remove hinting of patched glyphs
+          sed -i "s/^\(uni${hexcode}\)/#\1/" \
+                 "${HACK_PATH}"/postbuild_processing/tt-hinting/Hack-"${style}"-TA.txt
+        done < <(grep "unicode hex=" "${alternatePath}"/*.glif | sed 's/.*"\(.*\)".*/\1/' | sort -u)
     done
 
-    echo "✅ Patched $alternate"
+    echo "✅ Patched ${alternate}"
 done
 
 echo

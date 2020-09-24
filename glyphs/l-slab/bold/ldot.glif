@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<glyph name="ldot" format="1">
+  <advance width="1233"/>
+  <unicode hex="0140"/>
+  <outline>
+    <contour>
+      <point x="763" y="217" type="line"/>
+      <point x="1177" y="217" type="line"/>
+      <point x="1177" y="-8" type="line"/>
+      <point x="56" y="-8" type="line"/>
+      <point x="56" y="217" type="line"/>
+      <point x="470" y="217" type="line"/>
+      <point x="470" y="1331" type="line"/>
+      <point x="173" y="1331" type="line"/>
+      <point x="173" y="1556" type="line"/>
+      <point x="763" y="1556" type="line"/>
+    </contour>
+    <contour>
+      <point x="902" y="686" type="curve" smooth="yes"/>
+      <point x="902" y="872" type="line" smooth="yes"/>
+      <point x="902" y="892"/>
+      <point x="912" y="902"/>
+      <point x="932" y="902" type="curve" smooth="yes"/>
+      <point x="1147" y="902" type="line" smooth="yes"/>
+      <point x="1167" y="902"/>
+      <point x="1177" y="892"/>
+      <point x="1177" y="872" type="curve" smooth="yes"/>
+      <point x="1177" y="686" type="line" smooth="yes"/>
+      <point x="1177" y="666"/>
+      <point x="1167" y="656"/>
+      <point x="1147" y="656" type="curve" smooth="yes"/>
+      <point x="932" y="656" type="line" smooth="yes"/>
+      <point x="912" y="656"/>
+      <point x="902" y="666"/>
+    </contour>
+  </outline>
+</glyph>
