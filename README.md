@@ -2,7 +2,15 @@
 
 [![Build Status](https://semaphoreci.com/api/v1/sourcefoundry/alt-hack/branches/master/badge.svg)](https://semaphoreci.com/sourcefoundry/alt-hack)
 
-alt-hack is a stylistic alternate glyph library for the [Hack typeface](https://github.com/source-foundry/Hack).  It provides alternate glyph design source files (`*.glif`) to support drag + drop + overwrite existing source Unicode code point customization.  Overwrite the existing glyph design files in the Hack source with any combination of alternate designs that are available here, rebuild the fonts, and use your custom version.
+alt-hack is a stylistic alternate glyph library for the [Hack typeface](https://github.com/source-foundry/Hack).  
+
+# Download prebuilt!
+Any set of variants
+- [.tar.xz](https://equwal.com/alt-hacks.html)
+- [.zip](https://equwal.com/alt-hacks-zips.html)
+
+# Doing stuff manually
+It provides alternate glyph design source files (`*.glif`) to support drag + drop + overwrite existing source Unicode code point customization.  Overwrite the existing glyph design files in the Hack source with any combination of alternate designs that are available here, rebuild the fonts, and use your custom version.
 
 This repository is open to contributions of new glyph designs intended to be used with the Hack typeface.
 
