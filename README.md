@@ -4,8 +4,10 @@
 
 alt-hack is a stylistic alternate glyph library for the [Hack typeface](https://github.com/source-foundry/Hack).  
 
-# Download prebuilt tarballs!
-equwal hosts the entire space of possible variant packs at [equwal.com](https://equwal.com/alt-hacks.html).
+# Download prebuilt!
+Any set of variants
+- [.tar.xz](https://equwal.com/alt-hacks.html)
+- [.zip](https://equwal.com/alt-hacks-zips.html)
 
 # Doing stuff manually
 It provides alternate glyph design source files (`*.glif`) to support drag + drop + overwrite existing source Unicode code point customization.  Overwrite the existing glyph design files in the Hack source with any combination of alternate designs that are available here, rebuild the fonts, and use your custom version.
